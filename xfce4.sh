@@ -17,3 +17,6 @@ adduser user
 echo Setup Vnc Server
 echo Set password
 vncserver
+echo Setting up Pulseaudio
+export PULSE_SERVER=127.0.0.1
+echo You are done! Connect and enjoy!
