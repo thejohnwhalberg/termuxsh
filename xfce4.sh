@@ -10,7 +10,7 @@ apt install xterm -y
 echo Installing Xfce4
 apt install xfce4 -y
 echo Installing Tightvncserver
-apt install tightvncserver
+apt install tightvncserver -y
 echo Adding new user [user]
 echo Set password and add your info
 adduser user
