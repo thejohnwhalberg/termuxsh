@@ -1,4 +1,6 @@
 echo You are here! Just a moment...
+echo Installing Utils...
+apt install apt-utils
 echo Installing Python
 apt install python3 -y
 echo Installing Dbus-x11
