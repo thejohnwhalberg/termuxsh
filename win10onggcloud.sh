@@ -1,4 +1,4 @@
-read -p $'\e[1;37mEnter the Enter your ngrok token: \e[0m' token
+read -p $'\e[1;37mEnter your ngrok token: \e[0m' token
 sudo apt update -y
 sudo apt install apache2 ufw p7zip-full qemu-system-x86-64 -y
 sudo ufw allow 'VNC'
