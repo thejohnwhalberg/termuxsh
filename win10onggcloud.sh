@@ -2,7 +2,8 @@ read -p $'\e[1;37mEnter the Enter your ngrok token: \e[0m' token
 sudo apt update -y
 sudo apt install apache2 ufw p7zip-full qemu-system-x86-64 -y
 sudo ufw allow 'VNC'
-sudo ufw status wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
+sudo ufw status
+wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
 tar -xvzf ngrok-v3-stable-linux-amd64.tgz
 rm -rf ngrok-v3-stable-linux-amd64.tgz
 ./ngrok authtoken "$token"
