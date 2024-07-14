@@ -10,10 +10,5 @@ apk add --allow-untrusted aarch64.apk
 apk add --allow-untrusted ppc.apk
 apk add --allow-untrusted x86_64.apk
 apk add --allow-untrusted i386.apk
-rm qemu.apk
-rm aarch64.apk
-rm ppc.apk
-rm x86_64.apk
-rm i386.apk
 apk upgrade
 qemu-system-x86_64 --version
