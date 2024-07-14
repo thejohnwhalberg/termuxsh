@@ -16,5 +16,4 @@ rm ppc.apk
 rm x86_64.apk
 rm i386.apk
 apk upgrade
-clear
 qemu-system-x86_64 --version
