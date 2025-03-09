@@ -7,7 +7,9 @@ wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
 tar -xvzf ngrok-v3-stable-linux-amd64.tgz
 rm -rf ngrok-v3-stable-linux-amd64.tgz
 ./ngrok authtoken "$token"
-./ngrok tcp 5900 &>/dev/null
+./ngrok tcp 5900 > /dev/null &
+echo "Please go to the following link to check if the generated address is working and connect using VNC: https://dashboard.ngrok.com/agents"
+sleep 5
 wget -O file.7z 'https://archive.org/download/windows-xp.-7z_202408/Windows%20XP.7z'
 7za x file.7z
 rm -rf file.7z
