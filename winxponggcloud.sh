@@ -7,7 +7,7 @@ wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
 tar -xvzf ngrok-v3-stable-linux-amd64.tgz
 rm -rf ngrok-v3-stable-linux-amd64.tgz
 ./ngrok authtoken "$token"
-./ngrok tcp --region ap 5900 &>/dev/null
+./ngrok tcp 5900 &>/dev/null
 wget -O 10.7z 'https://archive.org/download/windows-xp.-7z_202408/Windows%20XP.7z'
 7za x 10.7z
 rm -rf 10.7z
