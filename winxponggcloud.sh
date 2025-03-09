@@ -8,8 +8,8 @@ tar -xvzf ngrok-v3-stable-linux-amd64.tgz
 rm -rf ngrok-v3-stable-linux-amd64.tgz
 ./ngrok authtoken "$token"
 ./ngrok tcp 5900 &>/dev/null
-wget -O 10.7z 'https://archive.org/download/windows-xp.-7z_202408/Windows%20XP.7z'
-7za x 10.7z
-rm -rf 10.7z
+wget -O file.7z 'https://archive.org/download/windows-xp.-7z_202408/Windows%20XP.7z'
+7za x file.7z
+rm -rf file.7z
 curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'
 sudo qemu-system-x86_64 -cpu core2duo,+avx -usb -device usb-kbd -device usb-tablet -smp sockets=1,cores=4,threads=1 -m 512M -hda XP.qcow2 -vga vmware -device ac97 -device e1000,netdev=n0 -netdev user,id=n0 -accel tcg,thread=multi,tb-size=2048 -vnc :0
