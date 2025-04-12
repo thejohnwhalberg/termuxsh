@@ -8,9 +8,15 @@ else
     rm -rf file.7z
 fi
 clear
-qemu-system-x86_64 -cpu core2duo,+avx -usb -device usb-kbd -device usb-tablet -smp sockets=1,cores=4,threads=1 -m 1G -hda XP.qcow2 -vga vmware -device ac97 -device e1000,netdev=n0 -netdev user,id=n0 -accel kvm
+echo "qemu-system-x86_64 -cpu core2duo,+avx -usb -device usb-kbd -device usb-tablet -smp sockets=1,cores=4,threads=1 -m 1G -hda XP.qcow2 -vga vmware -device ac97 -device e1000,netdev=n0 -netdev user,id=n0 -accel kvm" > runxp.sh
+chmod +rwx runxp.sh
+echo "To run, run the following command:"
+echo "----------\/----------"
+echo "./runxp.sh"
+echo "----------/\----------"
+./runxp.sh
 clear
 echo "To run again, run the following command:"
 echo "----------\/----------"
-echo "qemu-system-x86_64 -cpu core2duo,+avx -usb -device usb-kbd -device usb-tablet -smp sockets=1,cores=4,threads=1 -m 1G -hda XP.qcow2 -vga vmware -device ac97 -device e1000,netdev=n0 -netdev user,id=n0 -accel kvm"
+echo "./runxp.sh"
 echo "----------/\----------"
