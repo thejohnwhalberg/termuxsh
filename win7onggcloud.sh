@@ -43,6 +43,6 @@ echo 'echo "To run again, run the following command:"' >> start7.sh
 echo "echo " >> start7.sh
 echo 'echo "-"' >> start7.sh
 echo "echo " >> start7.sh
-echo "./start7" >> start7.sh
+echo 'echo "./start7.sh"' >> start7.sh
 chmod +x start7.sh
 ./start7.sh
