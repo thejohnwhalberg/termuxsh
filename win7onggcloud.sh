@@ -22,8 +22,8 @@ else
     rm -rf ngrok-v3-stable-linux-amd64.tgz
 fi
 ./ngrok authtoken "$token"
-echo "rungrok="$(./ngrok tcp 5900)" &" >> start7.sh
-echo "clear" > start7.sh
+echo "rungrok="$(./ngrok tcp 5900)" &" > start7.sh
+echo "clear" >> start7.sh
 echo "The address to connect to via VNC is below. If you don't see anything below, try checking here: https://dashboard.ngrok.com/agents" >> start7.sh
 echo "echo " >> start7.sh
 echo "echo "-"" >> start7.sh
