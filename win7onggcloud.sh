@@ -35,7 +35,7 @@ echo "curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/
 echo "sleep 10" >> start7.sh
 echo "sudo qemu-system-x86_64 -usb -device usb-tablet -device usb-kbd -cpu qemu64,+sse,+sse2,+sse4.1,+sse4.2 -smp sockets=1,cores=4,threads=1 -overcommit mem-lock=off -m 2048M -drive file=Tiny7.qcow2,aio=threads,cache=unsafe -device qxl-vga,vgamem_mb=128 -device ac97 -device rtl8139,netdev=n0 -netdev user,id=n0 -accel tcg,thread=multi,tb-size=2048 -vnc :0"  >> start7.sh
 echo "clear" >> start7.sh
-echo "To run again, run the following command:" >> start7.sh
+echo 'echo "To run again, run the following command:"' >> start7.sh
 echo "echo " >> start7.sh
 echo 'echo "-"' >> start7.sh
 echo "echo " >> start7.sh
