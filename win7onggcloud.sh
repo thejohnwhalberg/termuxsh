@@ -1,3 +1,4 @@
+clear
 read -p $'\e[1;37mEnter your ngrok token: \e[0m' token
 sudo apt update -y
 sudo apt install apache2 ufw p7zip-full aria2 qemu-system-x86-64 -y
