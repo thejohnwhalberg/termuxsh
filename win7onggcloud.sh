@@ -20,13 +20,16 @@ fi
 ./ngrok authtoken "$token"
 rungrok="$(./ngrok tcp 5900)" &
 clear
-echo "----------\/----------"
-echo "Please go to the following link to check if the generated address is working and connect using VNC: https://dashboard.ngrok.com/agents"
-echo "----------/\----------"
+echo "The address to connect to via VNC is below. If you don't see anything below, try checking here: https://dashboard.ngrok.com/agents"
+echo ""
+echo "-"
+echo ""
+curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'
 sleep 10
 sudo qemu-system-x86_64 -usb -device usb-tablet -device usb-kbd -cpu qemu64,+sse,+sse2,+sse4.1,+sse4.2 -smp sockets=1,cores=4,threads=1 -overcommit mem-lock=off -m 2048M -drive file=Tiny7.qcow2,aio=threads,cache=unsafe -device qxl-vga,vgamem_mb=128 -device ac97 -device rtl8139,netdev=n0 -netdev user,id=n0 -accel tcg,thread=multi,tb-size=2048 -vnc :0
 clear
 echo "To run again, run the following command:"
-echo "----------\/----------"
+echo ""
+echo "-"
+echo ""
 echo "rungrok="\$\(./ngrok tcp 5900\)" & sudo qemu-system-x86_64 -usb -device usb-tablet -device usb-kbd -cpu qemu64,+sse,+sse2,+sse4.1,+sse4.2 -smp sockets=1,cores=4,threads=1 -overcommit mem-lock=off -m 2048M -drive file=Tiny7.qcow2,aio=threads,cache=unsafe -device qxl-vga,vgamem_mb=128 -device ac97 -device rtl8139,netdev=n0 -netdev user,id=n0 -accel tcg,thread=multi,tb-size=2048 -vnc :0"
-echo "----------/\----------"
