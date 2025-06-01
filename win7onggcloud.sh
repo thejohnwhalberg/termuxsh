@@ -24,9 +24,9 @@ fi
 ./ngrok authtoken "$token"
 echo 'rungrok="$(./ngrok tcp 5900)" &' > start7.sh
 echo "clear" >> start7.sh
-echo "The address to connect to via VNC is below. If you do not see anything below, try checking here: https://dashboard.ngrok.com/agents" >> start7.sh
+echo 'echo "The address to connect to via VNC is below. If you do not see anything below, try checking here: https://dashboard.ngrok.com/agents"' >> start7.sh
 echo "echo " >> start7.sh
-echo "echo "-"" >> start7.sh
+echo 'echo "-"' >> start7.sh
 echo "echo " >> start7.sh
 echo "curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE \"s/.*public_url\":\"tcp:\/\/\([^\\\"]*\).*/\\1/p\"" >> start7.sh
 echo "sleep 10" >> start7.sh
@@ -34,7 +34,7 @@ echo "sudo qemu-system-x86_64 -usb -device usb-tablet -device usb-kbd -cpu qemu6
 echo "clear" >> start7.sh
 echo "To run again, run the following command:" >> start7.sh
 echo "echo " >> start7.sh
-echo "echo "-"" >> start7.sh
+echo 'echo "-"' >> start7.sh
 echo "echo " >> start7.sh
 echo "./start7" >> start7.sh
 chmod +x start7.sh
