@@ -1,9 +1,11 @@
 clear
 read -p $'\e[1;37mEnter your ngrok token: \e[0m' token
+clear
 sudo apt update -y
 sudo apt install apache2 ufw p7zip-full aria2 qemu-system-x86-64 -y
 sudo ufw allow 'VNC'
 sudo ufw status
+clear
 if [ -e "./Tiny7.qcow2" ]; then
     echo "File exists"
 else
@@ -11,6 +13,7 @@ else
     7za x file.7z
     rm -rf file.7z
 fi
+clear
 if [ -e "./ngrok" ]; then
     echo "File exists"
 else
