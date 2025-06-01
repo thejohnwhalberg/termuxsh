@@ -1,4 +1,8 @@
 clear
+echo "New to Ngrok? Create an account or get token here: https://dashboard.ngrok.com/get-started/your-authtoken"
+echo 
+echo "-"
+echo 
 read -p $'\e[1;37mEnter your ngrok token: \e[0m' token
 clear
 sudo apt update -y
