@@ -1,3 +1,7 @@
+clear
+echo "The owner of this script will not be responsible if any unexpected problems occur whether you edit this script or not. It will start in 10 seconds and you agree to this. To cancel press Ctrl + C."
+sleep 10
+clear
 echo You are here! Just a moment...
 echo Installing Utils...
 apt install apt-utils

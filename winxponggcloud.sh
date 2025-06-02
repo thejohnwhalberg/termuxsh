@@ -1,3 +1,7 @@
+clear
+echo "The owner of this script will not be responsible if any unexpected problems occur whether you edit this script or not. It will start in 10 seconds and you agree to this. To cancel press Ctrl + C."
+sleep 10
+clear
 read -p $'\e[1;37mEnter your ngrok token: \e[0m' token
 sudo apt update -y
 sudo apt install apache2 ufw p7zip-full qemu-system-x86-64 -y
