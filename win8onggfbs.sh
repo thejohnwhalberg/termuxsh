@@ -3,11 +3,11 @@ echo "The owner of this script will not be responsible if any unexpected problem
 sleep 10
 clear
 sudo apt update -y
-sudo apt install apache2 p7zip-full qemu-kvm -y
+sudo apt install apache2 p7zip-full qemu-kvm aria2 -y
 if [ -e "./W89200.qcow2" ]; then
     echo "File exists"
 else
-    wget -O file.7z 'https://archive.org/download/windows-8-9200.7znbabtermux/Windows%208%209200.7z'
+    aria2c -x 4 -o file.7z 'https://archive.org/download/windows-8-9200.7znbabtermux/Windows%208%209200.7z'
     7za x file.7z
     rm -rf file.7z
 fi
