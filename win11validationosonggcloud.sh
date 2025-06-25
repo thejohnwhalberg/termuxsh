@@ -40,7 +40,7 @@ echo 'echo "-"' >> start11vos.sh
 echo "echo " >> start11vos.sh
 echo "curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url\":\"tcp:..([^\"]*).*/\1/p'" >> start11vos.sh
 echo "sleep 10" >> start11vos.sh
-echo "sudo qemu-system-x86_64 -M q35 -cpu qemu64 -smp sockets=1,cores=4,threads=1 -overcommit mem-lock=off -m 4096M -drive file=11.vhd,aio=threads,cache=unsafe -vga std -device ich9-intel-hda -device hda-duplex -device igb,netdev=n0 -netdev user,id=n0 -accel tcg,thread=multi,tb-size=2048 -drive file=OVMF.fd,format=raw,readonly=on,if=pflash -drive file=RELEASEX64_OVMF_VARS.fd,format=raw,if=pflash -device intel-iommu -monitor stdio -vnc :0"  >> start11vos.sh
+echo "sudo qemu-system-x86_64 -M q35 -cpu qemu64 -smp sockets=1,cores=4,threads=1 -overcommit mem-lock=off -m 4096M -drive file=11.vhd,aio=threads,cache=unsafe -vga std -device ich9-intel-hda -device hda-duplex -device igb,netdev=n0 -netdev user,id=n0 -accel tcg,thread=multi,tb-size=2048 -drive file=RELEASEX64_OVMF.fd,format=raw,readonly=on,if=pflash -drive file=RELEASEX64_OVMF_VARS.fd,format=raw,if=pflash -device intel-iommu -monitor stdio -vnc :0"  >> start11vos.sh
 echo "clear" >> start11vos.sh
 echo 'echo "To run again, run the following command:"' >> start11vos.sh
 echo "echo " >> start11vos.sh
