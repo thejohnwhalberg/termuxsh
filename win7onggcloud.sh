@@ -23,7 +23,6 @@ clear
 # This section starts QEMU and then waits for the VNC port to be ready before starting Pinggy
 echo "clear" > start7.sh
 echo 'echo "Starting QEMU in the background..."' >> start7.sh
-# This is the corrected line using an environment variable to disable audio for older QEMU versions
 echo "QEMU_AUDIO_DRV=none sudo qemu-system-x86_64 -usb -device usb-tablet -device usb-kbd -cpu qemu64,+sse,+sse2,+sse4.1,+sse4.2 -smp sockets=1,cores=4,threads=1 -overcommit mem-lock=off -m 2048M -drive file=Tiny7.qcow2,aio=threads,cache=unsafe -device qxl-vga,vgamem_mb=128 -device rtl8139,netdev=n0 -netdev user,id=n0 -accel tcg,thread=multi,tb-size=2048 -vnc :0 &"  >> start7.sh
 
 # This loop waits for the VNC port (5900) to be open before continuing
@@ -36,10 +35,11 @@ echo 'echo ""' >> start7.sh
 echo 'echo "VNC server is ready!"' >> start7.sh
 
 echo "clear" >> start7.sh
-echo 'echo "Starting Pinggy tunnel..."' >> start7.sh
-echo 'echo "The address to connect to via VNC will be provided by Pinggy below:"' >> start7.sh
+echo 'echo "Starting Pinggy TCP tunnel..."' >> start7.sh
+echo 'echo "Enter the following address into your VNC Client:"' >> start7.sh
 echo "echo " >> start7.sh
-echo 'ssh -p 443 -R0:127.0.0.1:5900 qr@free.pinggy.io' >> start7.sh
+# This is the corrected line using the proper tcp@a.pinggy.io service for VNC
+echo 'ssh -p 443 -R0:127.0.0.1:5900 tcp@a.pinggy.io' >> start7.sh
 
 echo "clear" >> start7.sh
 echo 'echo "To run again, run the following command:"' >> start7.sh
